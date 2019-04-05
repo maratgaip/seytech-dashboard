@@ -68,13 +68,21 @@ $headers .= "Reply-To: $email" . PHP_EOL;
 $headers .= "MIME-Version: 1.0" . PHP_EOL;
 $headers .= "Content-type: text/plain; charset=utf-8" . PHP_EOL;
 $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
-$msg = "First line of text\nSecond line of text";
 
-// send email
 
-// if(mail($address, $e_subject, $msg, $headers)) {
-if(mail("marattig@gmail.com","My subject",$msg)) {
 
+$to      = 'marattig@example.com';
+$subject = 'the subject';
+$message = 'hello';
+$aaaaaaa = 'From: webmaster@example.com' . "\r\n" .
+    'Reply-To: webmaster@example.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+//mail($to, $subject, $message, $aaaaaaa);
+
+
+
+if(mail($to, $subject, $message, $headers)) {
 
 	// Email has sent successfully, echo a success page.
 
