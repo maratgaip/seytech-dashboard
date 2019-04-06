@@ -53,7 +53,7 @@ $sg = new \SendGrid($apiKey);
 
 $response = $sg->client->mail()->send()->post($mail);
 
-$statusCode = $response->statusCode();
+$statusCode = strval($response->statusCode());
 echo $statusCode;
 echo gettype($statusCode);
 if ($statusCode[0] == '2') {
@@ -64,7 +64,12 @@ if ($statusCode[0] == '2') {
 	echo "</div>";
 	echo "</fieldset>";
 } else {
-    echo 'ERROR!';
+    echo "<fieldset>";
+    echo "<div class='error_message'>";
+    echo "<h3>Failed.</h3>";
+    echo "<p>We are having a problem, please send an email to support@seytech.co for now.</p>";
+    echo "</div>";
+    echo "</fieldset>";
 }
 
 //echo $response->statusCode();
