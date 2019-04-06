@@ -14,7 +14,7 @@ $content = new SendGrid\Content("text/plain", $comments);
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
 $apiKey = $SENDGRID_API_KEY;
-//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
+$apiKey = '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';
 echo $apiKey;
 
 $sg = new \SendGrid($apiKey);
