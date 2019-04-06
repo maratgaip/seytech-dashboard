@@ -9,7 +9,7 @@ $comments = $_POST['comments'];
 // Send Grid
 $from = new SendGrid\Email(null, $email);
 $subject = "Hello World from the SendGrid PHP Library!";
-$to = new SendGrid\Email(null, "marattig@example.com");
+$to = new SendGrid\Email(null, "marattig@gmail.com");
 $content = new SendGrid\Content("text/plain", $comments);
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
