@@ -53,7 +53,21 @@ echo $apiKey;
 $sg = new \SendGrid($apiKey);
 
 $response = $sg->client->mail()->send()->post($mail);
-echo $response->statusCode();
-echo $response->headers();
-echo $response->body();
+
+$statusCode = $response->statusCode();
+echo $statusCode[0];
+if ($statusCode[0] == '2') {
+    echo "<fieldset>";
+	echo "<div id='success_page'>";
+	echo "<h3>Email Sent Successfully.</h3>";
+	echo "<p>Thank you <strong>$name</strong>, your message has been submitted to us.</p>";
+	echo "</div>";
+	echo "</fieldset>";
+} else {
+    echo 'ERROR!';
+}
+
+//echo $response->statusCode();
+//echo $response->headers();
+//echo $response->body();
 
