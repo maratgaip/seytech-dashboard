@@ -55,6 +55,7 @@ $response = $sg->client->mail()->send()->post($mail);
 
 $statusCode = $response->statusCode();
 echo $statusCode;
+echo gettype($statusCode);
 if ($statusCode[0] == '2') {
     echo "<fieldset>";
 	echo "<div id='success_page'>";
