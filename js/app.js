@@ -27,6 +27,6 @@
     });
 
     // Show video after loaded
-    setTimeout( () => $(".video-overlay").addClass("hide"), 3000)
+    //setTimeout( () => $(".video-overlay").addClass("hide"), 3000)
 
 })(jQuery)
