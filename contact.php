@@ -48,14 +48,13 @@ $content = new SendGrid\Content("text/plain", $comments);
 $mail = new SendGrid\Mail($from, $e_subject, $to, $content);
 
 $apiKey = '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';
-echo $apiKey;
 
 $sg = new \SendGrid($apiKey);
 
 $response = $sg->client->mail()->send()->post($mail);
 
 $statusCode = $response->statusCode();
-echo $statusCode[0];
+echo $statusCode;
 if ($statusCode[0] == '2') {
     echo "<fieldset>";
 	echo "<div id='success_page'>";
