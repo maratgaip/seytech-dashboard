@@ -1,5 +1,7 @@
 <?php
 
+require 'vendor/autoload.php';
+
 if(!$_POST) {
 	echo "failed"; 
 	exit;
@@ -70,31 +72,18 @@ $headers .= "Content-type: text/plain; charset=utf-8" . PHP_EOL;
 $headers .= "Content-Transfer-Encoding: quoted-printable" . PHP_EOL;
 
 
+// Send Grid
+$from = new SendGrid\Email(null, $email);
+$subject = "Hello World from the SendGrid PHP Library!";
+$to = new SendGrid\Email(null, "marattig@example.com");
+$content = new SendGrid\Content("text/plain", $comments);
+$mail = new SendGrid\Mail($from, $subject, $to, $content);
 
-$to      = 'marattig@example.com';
-$subject = 'the subject';
-$message = 'hello';
-$aaaaaaa = 'From: webmaster@example.com' . "\r\n" .
-    'Reply-To: webmaster@example.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+$apiKey = getenv('SENDGRID_API_KEY');
+$sg = new \SendGrid($apiKey);
 
-//mail($to, $subject, $message, $aaaaaaa);
+$response = $sg->client->mail()->send()->post($mail);
+echo $response->statusCode();
+echo $response->headers();
+echo $response->body();
 
-
-
-if(mail($to, $subject, $message, $headers)) {
-
-	// Email has sent successfully, echo a success page.
-
-	echo "<fieldset>";
-	echo "<div id='success_page'>";
-	echo "<h3>Email Sent Successfully.</h3>";
-	echo "<p>Thank you <strong>$name</strong>, your message has been submitted to us.</p>";
-	echo "</div>";
-	echo "</fieldset>";
-
-} else {
-
-	echo 'ERROR!';
-
-}
