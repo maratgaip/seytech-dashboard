@@ -30,7 +30,7 @@ if(trim($comments) == '') {
 // Configuration option.
 // Enter the email address that you want to emails to be sent to.
 
-$address = "marattig@gmail.com";
+$address = "support@seytech.co";
 
 
 // Configuration option.
@@ -47,7 +47,7 @@ $to = new SendGrid\Email(null, $address);
 $content = new SendGrid\Content("text/plain", $comments);
 $mail = new SendGrid\Mail($from, $e_subject, $to, $content);
 
-$apiKey = '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';
+$apiKey = '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';
 
 $sg = new \SendGrid($apiKey);
 
