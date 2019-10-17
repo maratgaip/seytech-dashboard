@@ -30,7 +30,7 @@ if(trim($comments) == '') {
 // Configuration option.
 // Enter the email address that you want to emails to be sent to.
 
-$address = "support@seytech.co";
+$address = "marattig@gmail.com";
 
 
 // Configuration option.
