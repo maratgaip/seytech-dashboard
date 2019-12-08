@@ -416,8 +416,9 @@ a {
 }
 
 .home-desc-center {
-    display: table-cell;
-    vertical-align: middle;
+    /*display: table-cell;
+    vertical-align: middle;*/
+    margin-top: 10%;
 }
 
 .home-title {
@@ -744,7 +745,7 @@ svg {
     color: #00a3e1;
 }
 
-.experience-content .experience-box .experience-date, 
+.experience-content .experience-box .experience-date,
 .experience-content .experience-box .experience-info {
     -webkit-box-shadow: 0 0 15px 0px #1b2838;
     -o-box-shadow: 0 0 15px 0px #1b2838;
@@ -886,7 +887,7 @@ svg {
 }
 
 .list-inline-item {
-    margin-right: 0px !important; 
+    margin-right: 0px !important;
 }
 
 /*==============================
@@ -1120,7 +1121,7 @@ a.faq[data-toggle=collapse]:before {
 }
 
 .form-group textarea.form-control.form-xl {
-    height: 170px; 
+    height: 170px;
 }
 
 .form-group .input-focus-effect {
@@ -1291,7 +1292,7 @@ a.faq[data-toggle=collapse]:before {
     .title-heading h1 {
         font-size: 40px;
     }
-    
+
     .blog-item {
         margin: 20px 0px;
     }
@@ -1338,7 +1339,7 @@ a.faq[data-toggle=collapse]:before {
 @media (min-width:768px) and (max-width: 1024px) {
     .title-heading h1 {
         font-size: 70px;
-    }    
+    }
 
     .hobby-div .icon i {
         font-size: 25px;
@@ -1509,4 +1510,14 @@ a.faq[data-toggle=collapse]:before {
 .hiring-text.full-width {
     width: 100%;
     text-align: center;
+}
+
+.grads {
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+}
+.grads .companies {
+    padding: 50px 0;
 }

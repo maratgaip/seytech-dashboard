@@ -8,13 +8,21 @@ function isEmail($email) {
 }
 
 $name     = $_POST['name'];
-$email    = $_POST['email'];
+$lastname    = $_POST['lastname'];
 $comments = $_POST['comments'];
+$email    = $_POST['email'];
+$phone = $_POST['phone'];
 
 if(trim($name) == '') {
 	echo '<div class="error_message">You must enter your name.</div>';
 	exit();
 } else if(trim($email) == '') {
+	echo '<div class="error_message">Please enter a valid email address.</div>';
+	exit();
+} else if(trim($lastname) == '') {
+	echo '<div class="error_message">Please enter a valid email address.</div>';
+	exit();
+} else if(trim($phone) == '') {
 	echo '<div class="error_message">Please enter a valid email address.</div>';
 	exit();
 } else if(!isEmail($email)) {
@@ -38,14 +46,16 @@ $address = "marattig@gmail.com";
 
 // Example, $e_subject = '$name . ' has contacted you via Your Website.';
 
-$e_subject = 'You have been contacted by ' . $name . '.';
+$e_subject = 'You have been contacted by ' . $name . $lastname . '.';
+$contentdata = $phone . $content;
 
 
 // Send Grid
 $from = new SendGrid\Email(null, $email);
 $to = new SendGrid\Email(null, $address);
 $content = new SendGrid\Content("text/plain", $comments);
-$mail = new SendGrid\Mail($from, $e_subject, $to, $content);
+$phone = new SendGrid\Content("text/plain", $phone);
+$mail = new SendGrid\Mail($from, $e_subject, $to, $contentdata);
 
 $apiKey = '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';
 
