@@ -44,7 +44,7 @@ $e_subject = 'You have been contacted by ' . $name . '.';
 // Send Grid
 $from = new SendGrid\Email(null, $email);
 $to = new SendGrid\Email(null, $address);
-$content = new SendGrid\Content("text/plain", $comments);
+$content = new SendGrid\Content("text/html", $comments);
 $mail = new SendGrid\Mail($from, $e_subject, $to, $content);
 
 $apiKey = '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';
