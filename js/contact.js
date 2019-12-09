@@ -10,11 +10,10 @@
                 .attr('disabled', 'disabled');
 
             $.post(action, {
-                    name: $('#name').val(),
-                  lastname: $('#lastname').val(),
+                    name: $('#name').val() + $('#lastname').val(),
                     email: $('#email').val(),
-                  phone: $('#phone').val(),
-                    comments: $('#comments').val(),
+                    phone: $('#phone').val(),
+                    comments: 'Phone:' + $('#phone').val() + 'Message:' + $('#comments').val()
                 },
                 function(data) {
                     document.getElementById('message').innerHTML = data;
