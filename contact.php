@@ -12,15 +12,19 @@ $lastname    = $_POST['lastname'];
 $comments = $_POST['comments'];
 $email    = $_POST['email'];
 $phone = $_POST['phone'];
+echo $email;
+echo $lastname;
+echo $comments;
+echo $phone;
 
 if(trim($name) == '') {
 	echo '<div class="error_message">You must enter your name.</div>';
 	exit();
 } else if(trim($email) == '') {
-	echo '<div class="error_message">Please enter a valid email address.</div>';
+	echo '<div class="error_message">You must enter your email.</div>';
 	exit();
 } else if(trim($lastname) == '') {
-	echo '<div class="error_message">Please enter a valid email address.</div>';
+	echo '<div class="error_message">You must enter your last name.</div>';
 	exit();
 } else if(trim($phone) == '') {
 	echo '<div class="error_message">Please enter a valid email address.</div>';
