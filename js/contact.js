@@ -45,7 +45,7 @@
                     name: $('#name').val() +' '+ $('#lastname').val(),
                     email: $('#email').val(),
                     phone: $('#phone').val(),
-                    comments: '<div><strong>' + 'Ref: ' + '</strong>' + location.search + '</div><div><strong>' + 'Type: ' + '</strong>' + $('#type').val() + '</div><div><strong>' + 'City: ' + '</strong>' + $('#city').val() + '</div><div><strong>' + 'Phone: ' + '</strong>' + $('#phone').val() + '</div><div><strong>' + 'Message:</strong></div>' + $('#comments').val()
+                    comments: '<div><strong>' + 'Work: ' + '</strong>' + $('#work').val() + '</div><div><strong>' + 'Time: ' + '</strong>' + $('#time').val() + '</div><div><strong>' + 'Ref: ' + '</strong>' + location.search + '</div><div><strong>' + 'Type: ' + '</strong>' + $('#type').val() + '</div><div><strong>' + 'City: ' + '</strong>' + $('#city').val() + '</div><div><strong>' + 'Phone: ' + '</strong>' + $('#phone').val() + '</div><div><strong>' + 'Message:</strong></div>' + $('#comments').val()
                 },
                 function(data) {
                     document.getElementById('message').innerHTML = data;
