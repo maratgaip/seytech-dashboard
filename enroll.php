@@ -9,8 +9,6 @@ function isEmail($email) {
 
 $name     = $_POST['name'];
 $email    = $_POST['email'];
-$phone     = $_POST['phone'];
-$city    = $_POST['city'];
 $comments = $_POST['comments'];
 
 if(trim($name) == '') {

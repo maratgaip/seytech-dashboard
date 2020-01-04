@@ -34,7 +34,7 @@
     // Working Contact Form
     $('#enroll-form').submit(function() {
         var action = $(this).attr('action');
-
+debugger
         $("#message").slideUp(750, function() {
             $('#message').hide();
 
