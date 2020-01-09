@@ -1,0 +1,2 @@
+# If header is present in the request
+RewriteCond %{HTTP:X-Forwarded-Proto}
